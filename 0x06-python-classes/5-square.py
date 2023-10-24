@@ -3,12 +3,12 @@
 
 
 class Square:
-    """Represents a square
+    """Represents a class square
     Attributes:
         __size (int): size of a side of the square
     """
     def __init__(self, size=0):
-        """initializes the square
+        """initializes the class square
         Args:
             size (int): size of a side of the square
         Returns:
@@ -27,7 +27,7 @@ class Square:
     def size(self):
         """getter of __size
         Returns:
-            The size of the square
+            The size of the class square
         """
         return self.__size
 
@@ -35,7 +35,7 @@ class Square:
     def size(self, value):
         """setter of __size
         Args:
-            value (int): size of a side of the square
+            value (int): size of a side of the class square
         Returns:
             None
         """
@@ -48,7 +48,7 @@ class Square:
                 self.__size = value
 
     def my_print(self):
-        """prints the square
+        """prints the class square
         Returns:
             None
         """
