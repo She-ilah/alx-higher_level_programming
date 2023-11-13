@@ -342,7 +342,7 @@ class TestSquare_stdout(unittest.TestCase):
 
     @staticmethod
     def capture_stdout(sq, method):
-            """Returns text printed to stdout."""
+        """Returns text printed to stdout."""
         capture = io.StringIO()
         sys.stdout = capture
         if method == "print":
@@ -645,6 +645,7 @@ class TestSquare_to_dictionary(unittest.TestCase):
         s = Square(10, 10, 10, 10)
         with self.assertRaises(TypeError):
             s.to_dictionary(1)
+
 
 if __name__ == "__main__":
     unittest.main()
