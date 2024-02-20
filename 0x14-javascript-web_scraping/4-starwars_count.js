@@ -1,32 +1,12 @@
 #!/usr/bin/node
-class Rectangle {
-  constructor (w, h) {
-    if ((w > 0) && (h > 0)) {
-      this.width = w;
-      this.height = h;
-    }
+const request = require('request');
+request(process.argv[2], function (error, response, body) {
+  if (!error) {
+    const results = JSON.parse(body).results;
+    console.log(results.reduce((count, movie) => {
+      return movie.characters.find((character) => character.endsWith('/18/'))
+        ? count + 1
+        : count;
+    }, 0));
   }
-
-  print () {
-    for (let i = 0; i < this.height; i++) {
-      let s = '';
-      for (let j = 0; j < this.width; j++) {
-        s += 'X';
-      }
-      console.log(s);
-    }
-  }
-
-  rotate () {
-    const aux = this.width;
-    this.width = this.height;
-    this.height = aux;
-  }
-
-  double () {
-    this.width *= 2;
-    this.height *= 2;
-  }
-}
-
-module.exports = Rectangle;
+});
